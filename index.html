@@ -98,7 +98,46 @@
                 },
             }
         } catch (_e) {}
-    }catch(_e){}</script></head><body class="bg-surface text-on-surface selection:bg-accent selection:text-surface-container-lowest overflow-x-hidden">
+    }catch(_e){}</script>
+<style>
+  /* Layout guardrails: explicit placement prevents Tailwind's generated grid utilities
+     from distributing cards into unintended rows on this static page. */
+  @media (min-width: 768px) {
+    #who-we-are > div,
+    #why-morpheus > div {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      column-gap: 4rem;
+    }
+    #who-we-are > div > div:first-child,
+    #why-morpheus > div > div:first-child {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    #who-we-are > div > div:nth-child(2),
+    #why-morpheus > div > div:nth-child(2) {
+      grid-column: 2;
+      grid-row: 1;
+      margin-top: 0;
+    }
+    #approach .grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    #approach .grid > :nth-child(1) { grid-column: 1; grid-row: 1; }
+    #approach .grid > :nth-child(2) { grid-column: 2; grid-row: 1; }
+    #approach .grid > :nth-child(3) { grid-column: 3; grid-row: 1; }
+    .services-grid {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+    .services-grid > :nth-child(1) { grid-column: 1 / span 8; grid-row: 1; }
+    .services-grid > :nth-child(2) { grid-column: 9 / span 4; grid-row: 1; }
+    .services-grid > :nth-child(3) { grid-column: 1 / span 4; grid-row: 2; }
+    .services-grid > :nth-child(4) { grid-column: 5 / span 8; grid-row: 2; }
+    .footer-links { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .footer-links > :nth-child(1) { grid-column: 1; grid-row: 1; }
+    .footer-links > :nth-child(2) { grid-column: 2; grid-row: 1; }
+    .footer-links > :nth-child(3) { grid-column: 3; grid-row: 1; }
+  }
+</style></head><body class="bg-surface text-on-surface selection:bg-accent selection:text-surface-container-lowest overflow-x-hidden">
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-background/90 dark:bg-background/90 border-b border-surface-variant/20">
 <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-[1440px] mx-auto">
@@ -146,7 +185,7 @@
 </header>
 
 <!-- Who We Are Section -->
-<section class="py-section-gap px-margin-desktop bg-surface overflow-hidden" id="who-we-are">
+<section class="py-20 md:py-28 px-margin-mobile md:px-margin-desktop bg-surface overflow-hidden" id="who-we-are">
     <div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
         <div class="md:col-span-5 space-y-stack-lg">
             <span class="font-label-caps text-label-caps text-accent tracking-widest uppercase">The Essence</span>
@@ -166,9 +205,9 @@
 </section>
 
 <!-- Our-->
-<section class="py-section-gap px-margin-desktop bg-surface-container-low" id="approach">
+<section class="py-20 md:py-28 px-margin-mobile md:px-margin-desktop bg-surface-container-low" id="approach">
     <div class="max-w-[1440px] mx-auto">
-        <div class="text-center mb-section-gap">
+        <div class="text-center mb-16 md:mb-20">
             <h2 class="font-headline-lg text-headline-lg text-on-surface mb-stack-sm">The Morpheus Approach</h2>
             <p class="font-body-md text-body-md text-secondary max-w-xl mx-auto">Our methodology is rooted in strategic storytelling and high-impact placement.</p>
         </div>
@@ -211,7 +250,7 @@
 </section>
 
 <!-- Services-->
-<section class="py-section-gap px-margin-desktop bg-surface">
+<section class="py-20 md:py-28 px-margin-mobile md:px-margin-desktop bg-surface">
     <div class="max-w-[1440px] mx-auto">
         <div class="flex justify-between items-end mb-stack-lg">
             <div class="max-w-xl">
@@ -222,7 +261,7 @@
                 <span class="material-symbols-outlined text-accent text-4xl">theater_comedy</span>
             </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mt-12">
+<div class="services-grid grid grid-cols-1 md:grid-cols-12 gap-8 mt-12">
             <!-- Bento Style Grid -->
             <div class="md:col-span-8 group relative overflow-hidden h-[400px]">
                 <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgJeLv-dQtz2DDq_IuWS4yzG4xNrpAApNnOg-A-qcvPyzoZ5ZWIJhURZA6cLhAnGYkyHAFaHWxb3OaiYzGYtYsNCZGx6YrEjaSspLDN944_a274ntqbYBXoQoNvs_urXAtpa_TgOkD8LRCIyEqQXjS58e4oB_et-fRk2xZWkx2zRClVaXBhQTZH6YCOtzE2RewUKGxsfUDL0Xp8R2rWIjDQbIlp-ieVn53KMu4IrKNH_edejbtmpIIiw" alt="NYC Skyline">
@@ -253,7 +292,7 @@
 </section>
 
 <!-- Philosophy Section -->
-<section class="py-section-gap px-margin-desktop bg-surface-container-low" id="why-morpheus">
+<section class="py-20 md:py-28 px-margin-mobile md:px-margin-desktop bg-surface-container-low" id="why-morpheus">
     <div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
         <div class="md:col-span-6 space-y-stack-lg">
             <span class="font-label-caps text-label-caps text-accent tracking-widest uppercase">The Philosophy</span>
