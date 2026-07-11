@@ -128,7 +128,7 @@
 <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary-container transition-colors duration-300" href="about.html">About</a>
 <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary-container transition-colors duration-300" href="services.html">Services</a>
 <a class="font-label-caps text-label-caps text-primary-container border-b border-primary-container pb-1 transition-colors duration-300" href="contact.html">Contact</a>
-<button class="ml-4 px-6 py-2 bg-primary-container text-on-primary-fixed font-label-caps text-label-caps hover:bg-on-surface hover:text-background transition-all duration-300 cursor-pointer active:opacity-70">Inquire</button>
+<a class="ml-4 px-6 py-2 bg-primary-container text-on-primary-fixed font-label-caps text-label-caps hover:bg-on-surface hover:text-background transition-all duration-300 cursor-pointer active:opacity-70" href="contact.html">Inquire</a>
 </div>
 <!-- Mobile Menu Toggle -->
 <button class="md:hidden text-on-surface">
@@ -180,37 +180,37 @@
 </div>
 <!-- Contact Form -->
 <div class="lg:col-span-8 bg-surface-container-low p-stack-lg md:p-12 border border-surface-variant/20">
-<form class="space-y-12">
+<form class="space-y-12" id="contact-form">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg">
 <div class="space-y-2">
 <label class="font-label-caps text-label-caps text-primary-container">FULL NAME</label>
-<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary-container focus:ring-0 text-on-surface font-body-lg placeholder:text-on-surface-variant/20 transition-all py-4" placeholder="ALEXANDER VANCE" type="text">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary-container focus:ring-0 text-on-surface font-body-lg placeholder:text-on-surface-variant/20 transition-all py-4" name="name" placeholder="ALEXANDER VANCE" required type="text">
 </div>
 <div class="space-y-2">
 <label class="font-label-caps text-label-caps text-primary-container">EMAIL ADDRESS</label>
-<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary-container focus:ring-0 text-on-surface font-body-lg placeholder:text-on-surface-variant/20 transition-all py-4" placeholder="ALEXANDER@EXAMPLE.COM" type="email">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary-container focus:ring-0 text-on-surface font-body-lg placeholder:text-on-surface-variant/20 transition-all py-4" name="email" placeholder="ALEXANDER@EXAMPLE.COM" required type="email">
 </div>
 </div>
 <div class="space-y-2">
 <label class="font-label-caps text-label-caps text-primary-container">ENQUIRY TYPE</label>
 <div class="flex flex-wrap gap-4 pt-4">
 <label class="cursor-pointer group">
-<input class="hidden peer" name="type" type="radio">
+<input class="hidden peer" name="type" required type="radio" value="Talent representation">
 <span class="px-6 py-2 border border-outline-variant text-on-surface-variant font-label-caps text-label-caps peer-checked:bg-primary-container peer-checked:text-on-primary-fixed peer-checked:border-primary-container transition-all">TALENT REP</span>
 </label>
 <label class="cursor-pointer group">
-<input class="hidden peer" name="type" type="radio">
+<input class="hidden peer" name="type" type="radio" value="Brand partnership">
 <span class="px-6 py-2 border border-outline-variant text-on-surface-variant font-label-caps text-label-caps peer-checked:bg-primary-container peer-checked:text-on-primary-fixed peer-checked:border-primary-container transition-all">BRAND PARTNERSHIP</span>
 </label>
 <label class="cursor-pointer group">
-<input class="hidden peer" name="type" type="radio">
+<input class="hidden peer" name="type" type="radio" value="Press inquiry">
 <span class="px-6 py-2 border border-outline-variant text-on-surface-variant font-label-caps text-label-caps peer-checked:bg-primary-container peer-checked:text-on-primary-fixed peer-checked:border-primary-container transition-all">PRESS INQUIRY</span>
 </label>
 </div>
 </div>
 <div class="space-y-2">
 <label class="font-label-caps text-label-caps text-primary-container">YOUR MESSAGE</label>
-<textarea class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary-container focus:ring-0 text-on-surface font-body-lg placeholder:text-on-surface-variant/20 transition-all py-4 resize-none" placeholder="HOW CAN WE ASSIST IN SHAPING YOUR STORY?" rows="4"></textarea>
+<textarea class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary-container focus:ring-0 text-on-surface font-body-lg placeholder:text-on-surface-variant/20 transition-all py-4 resize-none" name="message" placeholder="HOW CAN WE ASSIST IN SHAPING YOUR STORY?" required rows="4"></textarea>
 </div>
 <div class="flex justify-end">
 <button class="group flex items-center gap-4 px-10 py-5 bg-primary-container text-on-primary-fixed font-label-caps text-label-caps hover:bg-on-surface hover:text-background transition-all duration-500" type="submit">
@@ -228,7 +228,7 @@
 <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
 <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-margin-mobile">
 <h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">Ready to evolve your presence?</h2>
-<button class="px-12 py-4 border border-on-surface text-on-surface font-label-caps text-label-caps hover:bg-on-surface hover:text-background transition-all duration-500">START THE CONVERSATION</button>
+<a class="px-12 py-4 border border-on-surface text-on-surface font-label-caps text-label-caps hover:bg-on-surface hover:text-background transition-all duration-500" href="mailto:ayrton@morpheusmediarelations.com?subject=New%20Morpheus%20Media%20Relations%20Inquiry">START THE CONVERSATION</a>
 </div>
 </section>
 </main>
@@ -272,30 +272,27 @@
 </div>
 </footer>
 <script>
-        // Simple form interaction
-        const form = document.querySelector('form');
-        if(form) {
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const btn = form.querySelector('button');
-                const originalText = btn.innerHTML;
-                btn.innerHTML = 'DISPATCHING...';
-                btn.disabled = true;
-                
-                setTimeout(() => {
-                    btn.innerHTML = 'DISPATCHED SUCCESSFULY';
-                    btn.classList.add('bg-on-surface');
-                    btn.classList.add('text-background');
-                    form.reset();
-                    setTimeout(() => {
-                        btn.innerHTML = originalText;
-                        btn.classList.remove('bg-on-surface');
-                        btn.classList.remove('text-background');
-                        btn.disabled = false;
-                    }, 3000);
-                }, 1500);
-            });
-        }
+// Open the visitor's mail app with a prefilled, reviewable enquiry.
+const form = document.querySelector('#contact-form');
+if (form) {
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+
+        const data = new FormData(form);
+        const subject = `Website enquiry: ${data.get('type')}`;
+        const body = [
+            `Name: ${data.get('name')}`,
+            `Email: ${data.get('email')}`,
+            `Enquiry type: ${data.get('type')}`,
+            '',
+            'Message:',
+            data.get('message')
+        ].join('\n');
+
+        window.location.href = `mailto:ayrton@morpheusmediarelations.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+}
 
         // Parallax effect for the cinematic footer image
         window.addEventListener('scroll', () => {
