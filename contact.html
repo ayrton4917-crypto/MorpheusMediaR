@@ -280,7 +280,7 @@ if (form) {
         if (!form.reportValidity()) return;
 
         const data = new FormData(form);
-        const subject = `Website enquiry: ${data.get('type')}`;
+        const subject = `Inquiry - ${data.get('name')}`;
         const body = [
             `Name: ${data.get('name')}`,
             `Email: ${data.get('email')}`,
@@ -290,7 +290,7 @@ if (form) {
             data.get('message')
         ].join('\n');
 
-        window.location.href = `mailto:ayrton@morpheusmediarelations.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = `mailto:ayrton@morpheusmedia.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
 }
 
