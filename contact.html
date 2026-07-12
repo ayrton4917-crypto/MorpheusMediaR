@@ -114,6 +114,7 @@
           },
         }
     </script>
+<link href="mobile.css" rel="stylesheet">
 </head>
 <body class="bg-background text-on-surface font-body-md overflow-x-hidden">
 <!-- TopNavBar -->
@@ -165,7 +166,7 @@
 <div class="space-y-6">
 <div class="group cursor-pointer">
 <p class="font-label-caps text-[10px] text-on-surface-variant mb-1">EMAIL ENQUIRIES</p>
-<a class="font-headline-md text-body-lg text-on-surface group-hover:text-primary-container transition-colors duration-300" href="mailto:ayrton@morpheusmediarelations.com">ayrton@morpheusmediarelations.com</a>
+<a class="mobile-direct-email font-headline-md text-body-lg text-on-surface group-hover:text-primary-container transition-colors duration-300" href="mailto:ayrton@morpheusmediarelations.com">ayrton@morpheusmediarelations.com</a>
 </div>
 <div>
 <p class="font-label-caps text-[10px] text-on-surface-variant mb-1">OFFICE HOURS</p>
@@ -301,8 +302,9 @@ if (form) {
                 const scrollValue = window.scrollY;
                 footerImg.style.backgroundPositionY = `${(scrollValue * 0.1)}px`;
             }
-        });
-    </script>
+});
+</script>
+<script src="mobile.js"></script>
 
 
 
